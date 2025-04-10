@@ -91,7 +91,7 @@ const Projects = () => {
             className="project-card"
             whileHover={{ rotate: -5,zoom: 1.1, transition: { duration: 0.3 } }}
           >
-            <img src={project.image} alt={project.title} />
+            <img src={process.env.PUBLIC_URL +project.image} alt={project.title} />
             <div className="project-info">
               <h3>{project.title}</h3>
               <p>{project.description}</p>
