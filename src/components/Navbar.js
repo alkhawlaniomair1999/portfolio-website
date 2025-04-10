@@ -19,10 +19,10 @@ const Navbar = ({ toggleTheme, theme }) => {
         <button className="theme-toggle" onClick={toggleTheme}>
           {theme === "dark" ? (
             // إذا كان الوضع الليلي مفعّل، عرض أيقونة الشمس للتحول للوضع النهاري
-            <img src={process.env.PUBLIC_URL + '/assets/sun.png'} alt="Switch to light mode" />
+            <img src={process.env.PUBLIC_URL + 'assets/sun.png'} alt="Switch to light mode" />
           ) : (
             // إذا كان الوضع النهاري مفعّل، عرض أيقونة القمر للتحول للوضع الليلي
-            <img src={process.env.PUBLIC_URL + '/assets/moon.png'} alt="Switch to dark mode" />
+            <img src={process.env.PUBLIC_URL + 'assets/moon.png'} alt="Switch to dark mode" />
           )}
         </button>
       </div>

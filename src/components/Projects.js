@@ -16,7 +16,7 @@ const Projects = () => {
     {
       id: 1,
       title: "resturant pruchesing system",
-      image: "/assets/concrete.jpg",
+      image: "assets/concrete.jpg",
       description:
         "Lorem ipsum dolor sit amet consectetur elit adipisicing. Ex tempore dolor in, accusantium laudantium accusamus.",
       category: "Laravel & PHP",
@@ -24,7 +24,7 @@ const Projects = () => {
     {
       id: 2,
       title: "concrete company system",
-      image: "/assets/conc.jpg",
+      image: "assets/conc.jpg",
       description:
         "Lorem ipsum dolor sit amet consectetur elit adipisicing. Ex tempore dolor in, accusantium laudantium accusamus.",
       category: "Laravel & PHP",
@@ -32,7 +32,7 @@ const Projects = () => {
     {
       id: 3,
       title: "support system",
-      image: "/assets/support.jpg",
+      image: "assets/support.jpg",
       description:
         "Lorem ipsum dolor sit amet consectetur elit adipisicing. Ex tempore dolor in, accusantium laudantium accusamus.",
       category: "HTML & CSS & JavaScript",
@@ -40,7 +40,7 @@ const Projects = () => {
     {
       id: 4,
       title: "portfolio website",
-      image: "/assets/port.jpg",
+      image: "assets/port.jpg",
       description:
         "Lorem ipsum dolor sit amet consectetur elit adipisicing. Ex tempore dolor in, accusantium laudantium accusamus.",
       category: "HTML & CSS & JavaScript",
@@ -48,7 +48,7 @@ const Projects = () => {
     {
       id: 5,
       title: "task management system",
-      image: "/assets/task.jpg",
+      image: "assets/task.jpg",
       description:
         "Lorem ipsum dolor sit amet consectetur elit adipisicing. Ex tempore dolor in, accusantium laudantium accusamus.",
       category: "HTML & CSS & JavaScript",
