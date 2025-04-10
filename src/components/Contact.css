@@ -1,101 +1,108 @@
 /* تنسيق صفحة الاتصال */
 .contact-page {
-    padding: 50px 20px;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-  }
-  
-  /* الحاوية العامة لتقسيم المحتوى إلى عمودين */
+  padding: 50px 20px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* الحاوية العامة لتقسيم المحتوى إلى عمودين */
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* الجانب الأيسر يحتوي على النص والنموذج */
+.contact-left {
+  flex: 1 1 350px;
+  max-width: 500px;
+}
+
+.contact-left h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.contact-left p {
+  margin-bottom: 20px;
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+/* تنسيق النموذج */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 10px;
+  border: 1px solid var(--text-color);
+  background-color: transparent;
+  color: var(--text-color);
+  border-radius: 4px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: orange;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+}
+
+/* زر الإرسال */
+.submit-btn {
+  background-color: orange;
+  color: var(--bg-color);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: darkorange;
+}
+
+/* الجانب الأيمن يحتوي على الصورة التوضيحية */
+.contact-right {
+  flex: 1 1 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-right img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* أجهزة صغيرة: تعديل تخطيط صفحة الاتصال */
+@media only screen and (max-width: 600px) {
   .contact-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  /* الجانب الأيسر يحتوي على النص والنموذج */
-  .contact-left {
-    flex: 1 1 350px;
-    max-width: 500px;
-  }
-  
-  .contact-left h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-  }
-  
-  .contact-left p {
-    margin-bottom: 20px;
-    font-size: 1rem;
-    opacity: 0.8;
-  }
-  
-  /* تنسيق النموذج */
-  .contact-form {
-    display: flex;
     flex-direction: column;
-    gap: 15px;
+    padding: 30px 10px;
   }
-  
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-  }
-  
-  .form-group label {
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-  
-  .form-group input,
-  .form-group textarea {
-    padding: 10px;
-    border: 1px solid var(--text-color);
-    background-color: transparent;
-    color: var(--text-color);
-    border-radius: 4px;
-  }
-  
-  .form-group input:focus,
-  .form-group textarea:focus {
-    outline: none;
-    border-color: orange;
-  }
-  
-  .error-message {
-    color: red;
-    font-size: 0.9rem;
-  }
-  
-  /* زر الإرسال */
-  .submit-btn {
-    background-color: orange;
-    color: var(--bg-color);
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 4px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-  }
-  
-  .submit-btn:hover {
-    background-color: darkorange;
-  }
-  
-  /* الجانب الأيمن يحتوي على الصورة التوضيحية */
-  .contact-right {
-    flex: 1 1 350px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .contact-right img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-  }
-  
+}

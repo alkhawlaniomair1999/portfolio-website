@@ -1,96 +1,102 @@
 /* الحاوية الرئيسية للقسم */
 .projects-section {
-    display: flex;
-    padding: 50px 20px;
-    gap: 20px;
-  }
-  
-  /* الشريط الجانبي للفئات */
-  .sidebar {
-    width: 200px;
-    background-color: var(--card-bg);
-    border-radius: 8px;
-    padding: 20px;
-    height: fit-content;
-  }
-  
-  .categories {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .categories li {
-    padding: 10px;
-    cursor: pointer;
-    border-bottom: 1px solid #ccc;
-    transition: background-color 0.3s;
-  }
-  
-  .categories li:hover,
-  .categories li.active {
-    background-color: orange;
-    color: var(--bg-color);
-  }
-  
-  /* شبكة بطاقات المشاريع */
-  .projects-grid {
-    flex: 1;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-  }
-  
-  /* بطاقة المشروع */
+  display: flex;
+  padding: 50px 20px;
+  gap: 20px;
+}
+
+/* الشريط الجانبي للفئات */
+.sidebar {
+  width: 200px;
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  padding: 20px;
+  height: fit-content;
+}
+
+.categories {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.categories li {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #ccc;
+  transition: background-color 0.3s;
+}
+
+.categories li:hover,
+.categories li.active {
+  background-color: orange;
+  color: var(--bg-color);
+}
+
+/* شبكة بطاقات المشاريع */
+.projects-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* بطاقة المشروع */
+.project-card {
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-info {
+  padding: 15px;
+}
+
+.project-info h3 {
+  margin: 0 0 10px 0;
+}
+
+.project-info p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* إجراءات بطاقة المشروع */
+.project-actions {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+.project-actions .more-link {
+  text-decoration: none;
+  color: orange;
+  font-weight: bold;
+}
+
+.project-actions .icon {
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.project-actions .icon:hover {
+  transform: scale(1.1);
+}
+
+/* أجهزة صغيرة: جعل بطاقة المشروع تمتد بعرض كامل */
+@media only screen and (max-width: 600px) {
   .project-card {
-    background-color: var(--card-bg);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    cursor: pointer;
-    transition: transform 0.3s;
-  }
-  
-  .project-card img {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
   }
-  
-  .project-info {
-    padding: 15px;
-  }
-  
-  .project-info h3 {
-    margin: 0 0 10px 0;
-  }
-  
-  .project-info p {
-    font-size: 0.9rem;
-    line-height: 1.4;
-  }
-  
-  /* الإجراءات على البطاقة */
-  .project-actions {
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
-    gap: 10px;
-  }
-  
-  .project-actions .more-link {
-    text-decoration: none;
-    color: orange;
-    font-weight: bold;
-  }
-  
-  .project-actions .icon {
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: transform 0.3s;
-  }
-  
-  .project-actions .icon:hover {
-    transform: scale(1.1);
-  }
-  
+}

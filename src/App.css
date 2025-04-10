@@ -22,7 +22,7 @@ body {
   color: var(--text-color);
 }
 
-/* شريط التنقل */
+/* شريط التنقل الرئيسي */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -35,8 +35,15 @@ body {
   left: 0;
   right: 0;
   z-index: 1000;
+  transition: all 0.3s ease;
 }
 
+/* عند تفعيل القائمة المنسدلة في الأجهزة الصغيرة يتم إضافة class "expanded" */
+.navbar.expanded {
+  position: relative;  /* يتحول من fixed إلى relative لإدراج قائمة التنقل ضمن التدفق ويدفع المحتوى لأسفل */
+}
+
+/* أقسام الناف بار */
 .navbar-left {
   flex-basis: 20%;
 }
@@ -46,6 +53,7 @@ body {
   text-align: center;
 }
 
+/* قائمة الروابط (لأجهزة الديسكتوب) */
 .navbar-links {
   list-style: none;
   display: inline-flex;
@@ -69,6 +77,7 @@ body {
   text-align: right;
 }
 
+/* زر تبديل الثيم */
 .theme-toggle {
   background: none;
   border: none;
@@ -80,10 +89,56 @@ body {
   height: 24px;
 }
 
-/* أقسام الصفحة */
+/* زر القائمة (للديفيس المحمول) */
+.menu-toggle {
+  display: none;  /* سيظهر فقط على الأجهزة الصغيرة */
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+/* قائمة التنقل المنسدلة (لجوال) */
+.navbar-dropdown {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: var(--navbar-bg);
+  position: relative; /* بحيث تدخل ضمن التدفق وتدفع باقي المحتويات لأسفل */
+}
+
+.navbar-dropdown li {
+  width: 100%;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.navbar-dropdown li a {
+  width: 100%;
+  display: block;
+  text-align: center;
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.navbar-dropdown li a:hover {
+  background-color: orange;
+  color: var(--bg-color);
+}
+
+/* عند تفعيل القائمة المنسدلة */
+.navbar-dropdown.active {
+  display: flex;
+}
+
+/* أقسام الصفحة العامة */
 .page {
   padding: 50px 20px;
   text-align: center;
+  /* لتعويض شريط الناف بار الثابت (إذا لم يكن في وضع expanded) */
+  margin-top: 70px;
 }
 
 /* الصفحة الرئيسية */
@@ -95,7 +150,8 @@ body {
   padding: 50px 20px;
 }
 
-.home-left, .home-right {
+.home-left,
+.home-right {
   flex: 1;
   min-width: 300px;
   margin: 20px;
@@ -119,11 +175,13 @@ body {
   margin: 10px 0;
   font-weight: bold;
 }
-.social-icons{
+
+/* أيقونات وسائل التواصل الاجتماعي */
+.social-icons {
   margin-top: 30px;
+  display: flex;
 }
 
-/* أيقونات وسائل التواصل الاجتماعي (يمكن إضافتها إذا رغبت) */
 .social-icons a {
   text-decoration: none;
   color: var(--text-color);
@@ -143,35 +201,55 @@ body {
   max-width: 400px;
 }
 
+/* -----------------------------------------------
+   Media Queries لتجاوب الموقع مع جميع الشاشات
+-------------------------------------------------- */
 
-
-/* قسم المشاريع */
-.projects-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 30px;
+/* الأجهزة الصغيرة (الهواتف) */
+@media only screen and (max-width: 600px) {
+  /* إخفاء الروابط العادية وإظهار زر القائمة */
+  .navbar-center {
+    display: none;
+  }
+  
+  .menu-toggle {
+    display: block;
+  }
+  
+  /* يمكن إخفاء قائمة الروابط المنسدلة في البداية */
+  .navbar-dropdown {
+    display: none;
+  }
+  
+  /* عند تفعيل القائمة، يتم عرضها */
+  .navbar.expanded .navbar-dropdown {
+    display: flex;
+  }
+  
+  /* تعديل تخطيط الصفحة الرئيسية */
+  .home-container {
+    flex-direction: column;
+    padding: 30px 10px;
+  }
+  
+  .home-left,
+  .home-right {
+    margin: 10px;
+  }
 }
 
-.project-card {
-  background-color: var(--card-bg);
-  width: 300px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
-  transition: transform 0.3s ease;
-  cursor: pointer;
-}
-
-.project-card img {
-  width: 100%;
-  border-radius: 8px;
-}
-
-/* التذييل */
-.footer {
-  background-color: var(--navbar-bg);
-  padding: 20px;
-  text-align: center;
-  border-top: 1px solid #333;
+/* الأجهزة المتوسطة (التابلت) */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .navbar {
+    padding: 10px 15px;
+  }
+  
+  .home-container {
+    padding: 40px 15px;
+  }
+  
+  .home-left,
+  .home-right {
+    margin: 15px;
+  }
 }
