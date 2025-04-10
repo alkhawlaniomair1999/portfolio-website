@@ -1,38 +1,177 @@
-.App {
+/* تعريف المتغيرات للوضع النهاري (default light) */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #121212;
+  --navbar-bg: #f7f7f7;
+  --card-bg: #f0f0f0;
+}
+
+/* عند ضبط الوضع الليلي */
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --navbar-bg: #1e1e1e;
+  --card-bg: #1e1e1e;
+}
+
+/* تطبيق المتغيرات */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* شريط التنقل */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: var(--navbar-bg);
+  border-bottom: 1px solid #333;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.navbar-left {
+  flex-basis: 20%;
+}
+
+.navbar-center {
+  flex-basis: 60%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar-links {
+  list-style: none;
+  display: inline-flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar-links li a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar-links li a:hover {
+  color: orange;
+}
+
+.navbar-right {
+  flex-basis: 20%;
+  text-align: right;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.theme-toggle img {
+  width: 24px;
+  height: 24px;
+}
+
+/* أقسام الصفحة */
+.page {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+/* الصفحة الرئيسية */
+.home-container {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 50px 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.home-left, .home-right {
+  flex: 1;
+  min-width: 300px;
+  margin: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* صورة الملف الشخصي وشارة التوثيق */
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid orange;
+}
+
+.verified-badge {
+  display: inline-block;
+  background-color: orange;
+  color: #121212;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+  font-weight: bold;
+}
+.social-icons{
+  margin-top: 30px;
+}
+
+/* أيقونات وسائل التواصل الاجتماعي (يمكن إضافتها إذا رغبت) */
+.social-icons a {
+  text-decoration: none;
+  color: var(--text-color);
+  margin-right: 20px;
+  padding-right: 20px;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: orange;
+}
+
+/* الرسم التوضيحي (لابتوب وكوب) */
+.illustration-img {
+  width: 100%;
+  max-width: 400px;
+}
+
+
+
+/* قسم المشاريع */
+.projects-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.project-card {
+  background-color: var(--card-bg);
+  width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.project-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* التذييل */
+.footer {
+  background-color: var(--navbar-bg);
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid #333;
 }
