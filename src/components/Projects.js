@@ -53,10 +53,9 @@ const Projects = () => {
         "Lorem ipsum dolor sit amet consectetur elit adipisicing. Ex tempore dolor in, accusantium laudantium accusamus.",
       category: "HTML & CSS & JavaScript",
     },
-    
   ];
 
-  // حالة لتتبع الفئة المحددة من قبل المستخدم
+  // حالة تتبع الفئة المحددة من قبل المستخدم
   const [selectedCategory, setSelectedCategory] = useState("All Projects");
 
   const filteredProjects =
@@ -89,9 +88,19 @@ const Projects = () => {
           <motion.div
             key={project.id}
             className="project-card"
-            whileHover={{ rotate: -5,zoom: 1.1, transition: { duration: 0.3 } }}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.5 }}
+            whileHover={{
+              rotate: -5,
+              scale: 1.1,
+              transition: { duration: 0.3 },
+            }}
           >
-            <img src={process.env.PUBLIC_URL +project.image} alt={project.title} />
+            <img
+              src={process.env.PUBLIC_URL + project.image}
+              alt={project.title}
+            />
             <div className="project-info">
               <h3>{project.title}</h3>
               <p>{project.description}</p>
@@ -99,7 +108,6 @@ const Projects = () => {
                 <a href="#" className="more-link">
                   More
                 </a>
-                {/* أيقونات إضافية قابلة للتخصيص */}
                 <span className="icon edit-icon">✎</span>
                 <span className="icon details-icon">ℹ️</span>
               </div>

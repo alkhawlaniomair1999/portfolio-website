@@ -208,10 +208,12 @@ body {
 /* الأجهزة الصغيرة (الهواتف) */
 @media only screen and (max-width: 600px) {
   /* إخفاء الروابط العادية وإظهار زر القائمة */
-  .navbar-center {
+  .navbar-center .navbar-links {
     display: none;
   }
-  
+  .navbar-left {
+    display: none; /* إخفاء قسم الروابط في الجوال */
+  }
   .menu-toggle {
     display: block;
   }
@@ -251,5 +253,33 @@ body {
   .home-left,
   .home-right {
     margin: 15px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  
+  /* تعديل قائمة التنقل المنسدلة لتعرض بالعرض الكامل للجوال */
+  .navbar-dropdown {
+    display: flex !important; /* تأكيد العرض عند تفعيل القائمة */
+    position: fixed; /* لضمان تغطية عرض الشاشة بالكامل */
+    top: 60px; /* تحديد موقعها أسفل شريط التنقل (يمكنك تعديل القيمة حسب ارتفاع الناف بار) */
+    left: 0;
+    width: 100%;
+    list-style: none; /* إخفاء علامات الترقيم (النقاط) */
+    margin: 0;
+    padding: 0;
+    z-index: 1100;
+  }
+
+  /* ضمان أن كل عنصر من عناصر القائمة يمتد بعرض الشاشة بالكامل */
+  .navbar-dropdown li {
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    text-align: center; /* لتوسيط الروابط داخل العناصر */
+  }
+
+  /* إزالة الهوامش أو الحشوات غير المرغوبة في الروابط إذا لزم الأمر */
+  .navbar-dropdown li a {
+    padding: 10px 0;
+    display: block;
   }
 }
