@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Lottie from "lottie-react";
 import doneAnimation from "./animation/lap.json"; // تأكد من أن المسار صحيح
-import { FaGithub, FaLinkedin, FaTwitter, FaFacebook, FaInstagram } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaTwitter, FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
 const Home = () => {
   return (
     <div className="home-container">
@@ -21,6 +21,7 @@ const Home = () => {
           <a href="https://linkedin.com/in/omair-alkhawlani-78b035338" target="_blank" rel="noreferrer"><FaLinkedin size={30} /></a>
           <a href="https://www.facebook.com/omair.alkhawlani" target="_blank" rel="noreferrer"><FaFacebook size={30} /></a>
           <a href="https://www.instagram.com/alkhawlaniomair/" target="_blank" rel="noreferrer"><FaInstagram size={30} /></a>
+          <a href="https://wa.me/966506567981" target="_blank" rel="noreferrer"><FaWhatsapp size={30} /></a>
         </div>
       </div>
       <div className="home-right">

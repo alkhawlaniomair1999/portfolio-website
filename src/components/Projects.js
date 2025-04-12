@@ -17,41 +17,41 @@ const Projects = () => {
       id: 1,
       title: "resturant pruchesing system",
       image: "/assets/concrete.jpg",
-      description:
-        "Lorem ipsum dolor sit amet consectetur elit adipisicing. Ex tempore dolor in, accusantium laudantium accusamus.",
+      description: "A Laravel-based restaurant purchasing system streamlines inventory and purchasing management. It enables real-time inventory tracking, supplier management, and efficient purchase order creation. With a user-friendly interface and secure access, it optimizes restaurant operations by leveraging Laravel's robust framework for high performance and security.",
       category: "Laravel & PHP",
+      s: 'https://github.com/alkhawlaniomair1999/pruchesing-system',
     },
     {
       id: 2,
       title: "concrete company system",
       image: "/assets/conc.jpg",
-      description:
-        "Lorem ipsum dolor sit amet consectetur elit adipisicing. Ex tempore dolor in, accusantium laudantium accusamus.",
+      description:"A concrete company system built with Laravel manages orders, inventory, and deliveries efficiently. It tracks raw materials, schedules production, and coordinates deliveries to construction sites. The system offers real-time updates, supplier management, and detailed reporting. With a user-friendly interface and secure access, it enhances operational efficiency by utilizing Laravel's framework.",
       category: "Laravel & PHP",
+      s: 'https://github.com/alkhawlaniomair1999/concrete-system-laravel',
     },
     {
       id: 3,
       title: "support system",
       image: "/assets/support.jpg",
-      description:
-        "Lorem ipsum dolor sit amet consectetur elit adipisicing. Ex tempore dolor in, accusantium laudantium accusamus.",
+      description:"A support system built with HTML, CSS, and JavaScript manages customer service efficiently. It handles tickets, tracks inquiries, and assigns tasks to support agents. The system offers real-time updates and a knowledge base. With an intuitive interface, it enhances customer satisfaction by providing reliable and efficient support operations, ultimately improving response times.",
       category: "HTML & CSS & JavaScript",
+      s:'https://github.com/alkhawlaniomair1999/support-system',
     },
     {
       id: 4,
       title: "portfolio website",
       image: "/assets/port.jpg",
-      description:
-        "Lorem ipsum dolor sit amet consectetur elit adipisicing. Ex tempore dolor in, accusantium laudantium accusamus.",
+      description:"A portfolio website built with HTML, CSS, and JavaScript showcases an individual's work and skills. It features project galleries, an about section, and contact information. The site offers a visually appealing and responsive design, providing visitors with an engaging experience to explore the creator's professional achievements and capabilities.",
       category: "HTML & CSS & JavaScript",
+      s: 'https://alkhawlaniomair1999.github.io/omair-site/',
     },
     {
       id: 5,
       title: "task management system",
       image: "/assets/task.jpg",
-      description:
-        "Lorem ipsum dolor sit amet consectetur elit adipisicing. Ex tempore dolor in, accusantium laudantium accusamus.",
+      description:"A task management system built with HTML, CSS, and JavaScript helps organize and track tasks efficiently. It allows users to create, update, and prioritize tasks, set deadlines, and monitor progress. With a clean and responsive interface, the system enhances productivity by providing a clear overview of tasks and facilitating effective time management.",
       category: "HTML & CSS & JavaScript",
+      s: 'https://alkhawlaniomair1999.github.io/task-manager/',
     },
   ];
 
@@ -85,6 +85,7 @@ const Projects = () => {
       {/* المحتوى الرئيسي: شبكة بطاقات المشاريع */}
       <div className="projects-grid">
         {filteredProjects.map((project) => (
+          <a href={project.s} target="_blank" className="">
           <motion.div
             key={project.id}
             className="project-card"
@@ -92,8 +93,9 @@ const Projects = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.5 }}
             whileHover={{
-              rotate: -5,
+              rotate: -3,
               scale: 1.1,
+              boxShadow: "0px 0px 20px rgba(255, 165, 0, 0.5)",
               transition: { duration: 0.3 },
             }}
           >
@@ -104,15 +106,10 @@ const Projects = () => {
             <div className="project-info">
               <h3>{project.title}</h3>
               <p>{project.description}</p>
-              <div className="project-actions">
-                <a href="#" className="more-link">
-                  More
-                </a>
-                <span className="icon edit-icon">✎</span>
-                <span className="icon details-icon">ℹ️</span>
-              </div>
+             
             </div>
           </motion.div>
+          </a>
         ))}
       </div>
     </div>

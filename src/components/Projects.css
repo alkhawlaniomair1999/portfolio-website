@@ -93,6 +93,10 @@
 .project-actions .icon:hover {
   transform: scale(1.1);
 }
+a{
+  text-decoration: none;
+  color: inherit;
+}
 
 /* أجهزة صغيرة: جعل بطاقة المشروع تمتد بعرض كامل */
 @media only screen and (max-width: 600px) {
