@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div className="home-container">
       <div className="home-left">
-        <img src={process.env.PUBLIC_URL + '/assets/my_photo.JPG'} alt="Profile" className="profile-img" />
+        <img src={process.env.PUBLIC_URL + '/assets/me.JPG'} alt="Profile" className="profile-img" />
         <div className="verified-badge">✓</div>
         <h1>Software Designer, Web Developer & IT Support</h1>
         <p>
